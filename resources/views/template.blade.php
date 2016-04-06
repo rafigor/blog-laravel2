@@ -20,40 +20,40 @@
     <![endif]-->
 </head>
 <body>
-    <div class="blog-masthead">
-        <div class="container">
-            <nav class="blog-nav">
-                <a class="blog-nav-item @if(route::getCurrentRoute()->getName() ==             'index') active @endif" href="{{route('index')}}">Home</a>
-                <a class="blog-nav-item @if(route::getCurrentRoute()->getName() == 'admin.posts.index') active @endif" href="{{route('admin.posts.index')}}">Admin</a>
-            </nav>
-        </div>
+<div class="blog-masthead">
+    <div class="container">
+        <nav class="blog-nav">
+            <a class="blog-nav-item @if(route::getCurrentRoute()->getName() ==             'index') active @endif" href="{{route('index')}}">Home</a>
+            <a class="blog-nav-item @if(route::getCurrentRoute()->getName() == 'admin.posts.index') active @endif" href="{{route('admin.posts.index')}}">Admin</a>
+        </nav>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="blog-header">
+        <h1 class="blog-title">Blog Exemplo Laravel 5.1</h1>
+        <p class="lead blog-description">Exemplo criado para projeto Laravel 5.1</p>
     </div>
 
-    <div class="container">
+    <div class="row">
+        <div class="col-sm-10 blog-main">
+            @yield('content')
+        </div><!-- /.blog-main -->
+    </div><!-- /.row -->
 
-        <div class="blog-header">
-            <h1 class="blog-title">Blog Exemplo Laravel 5.2</h1>
-            <p class="lead blog-description">Exemplo criado para projeto Laravel 5.2</p>
-        </div>
+</div><!-- /.container -->
 
-        <div class="row">
-            <div class="col-sm-10 blog-main">
-                @yield('content')
-            </div><!-- /.blog-main -->
-        </div><!-- /.row -->
+<footer class="blog-footer">
+    <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
 
-    </div><!-- /.container -->
-
-    <footer class="blog-footer">
-        <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        <p>
-            <a href="#">Back to top</a>
-        </p>
-    </footer>
-
-    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>

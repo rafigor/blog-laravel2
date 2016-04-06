@@ -13,9 +13,9 @@
 
 Route::get ('/'                   , ['as' => 'index'              , 'uses'=>'PostController@index']);
 
-Route::get ('/auth/login', 'Auth\AuthController@getLogin');
-Route::post('/auth/login', 'Auth\AuthController@postLogin');
-Route::get ('/auth/logout', 'Auth\AuthController@getLogout');
+Route::get ('/home', function(){
+    return redirect()->route('admin.posts.index');
+});
 
 Route::controllers([
     'auth'     => 'Auth\AuthController',
@@ -25,6 +25,7 @@ Route::controllers([
 Route::group(['prefix' => 'admin', 'middleware'=>'auth'], function(){
     Route::group(['prefix' => 'posts'], function(){
         Route::get (''            , ['as' => 'admin.posts.index'  , 'uses'=>'PostsAdminController@index']);
+
         //insert
         Route::get ('create'      , ['as' => 'admin.posts.create' , 'uses'=>'PostsAdminController@create']);
         Route::post('store'       , ['as' => 'admin.posts.store'  , 'uses'=>'PostsAdminController@store']);
