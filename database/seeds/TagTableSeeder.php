@@ -12,7 +12,7 @@ class TagTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('TRUNCATE tags CASCADE');
+        DB::table('tags')->delete();
         factory(Tag::class, 10)->create();
     }
 }

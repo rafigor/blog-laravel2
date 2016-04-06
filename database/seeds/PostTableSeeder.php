@@ -12,7 +12,7 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('TRUNCATE POSTS CASCADE');
+        DB::table('posts')->delete();
         factory(Post::class, 15)->create();
     }
 }

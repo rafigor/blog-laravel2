@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        DB::statement('TRUNCATE users CASCADE');
+        User::truncate();
         factory('App\User')->create([
             'name' => 'admin',
             'email' => 'rafigor@gmail.com',
