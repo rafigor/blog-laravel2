@@ -14,7 +14,16 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+        DB::statement('TRUNCATE users CASCADE');
+        factory('App\User')->create([
+            'name' => 'admin',
+            'email' => 'rafigor@gmail.com',
+            'password' => bcrypt(123456),
+            'remember_token' => str_random(10),
+        ]);
+
+        $this->call(PostTableSeeder::class);
+        $this->call(TagTableSeeder::class);
 
         Model::reguard();
     }
